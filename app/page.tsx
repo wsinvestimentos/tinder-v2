@@ -585,7 +585,12 @@ export default function SigiloX() {
   }, [currentStep])
 
   const canVerify =
-    phoneNumber.length >= 10 && selectedGender && profilePhoto && lastTinderUse && cityChange && selectedAgeRange
+  phoneNumber.length >= 10 &&
+  selectedGender &&
+  profilePhoto &&
+  lastTinderUse &&
+  cityChange &&
+  selectedAgeRange;
 
   return (
     <div className="min-h-screen" style={{ fontFamily: "Inter, -apple-system, BlinkMacSystemFont, sans-serif" }}>
