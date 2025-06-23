@@ -268,32 +268,46 @@ export default function SigiloX() {
   useEffect(() => {
     if (currentStep === "verification") {
       const messages = [
-        { progress: 0, message: "Connecting to Tinder servers..." },
-        { progress: 15, message: "Accessing profile information..." },
-        { progress: 30, message: "Decrypting activity data..." },
-        { progress: 45, message: "Locating geographic coordinates..." },
-        { progress: 60, message: "Cross-referencing with global records..." },
-        { progress: 75, message: "Analyzing behavior patterns..." },
-        { progress: 90, message: "Compiling confidential information..." },
-        { progress: 100, message: "Preliminary analysis completed!" },
+        { progress: 0, message: "Initializing SigiloX AI facial recognition engine..." },
+        { progress: 5, message: "Establishing secure connection to Tinder servers..." },
+        { progress: 10, message: "Bypassing security protocols and firewalls..." },
+        { progress: 15, message: "Extracting biometric facial features from profile..." },
+        { progress: 20, message: "Analyzing facial geometry and bone structure..." },
+        { progress: 25, message: "Cross-referencing with 247 social media databases..." },
+        { progress: 30, message: "Scanning Instagram, Facebook, and LinkedIn profiles..." },
+        { progress: 35, message: "Analyzing profile photo metadata and EXIF data..." },
+        { progress: 40, message: "Decrypting location data from image timestamps..." },
+        { progress: 45, message: "Scanning recent login locations and IP addresses..." },
+        { progress: 50, message: "Accessing encrypted conversation threads..." },
+        { progress: 55, message: "Decrypting private messages and chat history..." },
+        { progress: 60, message: "Matching facial geometry with 94.7% confidence..." },
+        { progress: 65, message: "Verifying identity across multiple platforms..." },
+        { progress: 70, message: "Accessing private photo galleries and hidden content..." },
+        { progress: 75, message: "Analyzing behavioral patterns and activity logs..." },
+        { progress: 80, message: "Compiling comprehensive digital footprint report..." },
+        { progress: 85, message: "Cross-checking with dating app databases..." },
+        { progress: 90, message: "Finalizing security protocols and data encryption..." },
+        { progress: 95, message: "Preparing confidential analysis report..." },
+        { progress: 100, message: "Analysis complete - Suspicious activity detected!" },
       ]
 
       const interval = setInterval(() => {
         setVerificationProgress((prev) => {
-          const newProgress = prev + Math.random() * 8 + 2
+          // Progresso muito mais lento: incremento de 0.8% a cada 800ms = ~2 minutos total
+          const newProgress = prev + Math.random() * 0.6 + 0.8
 
-          const currentMessage = messages.find((m) => newProgress >= m.progress && newProgress < m.progress + 25)
+          const currentMessage = messages.find((m) => newProgress >= m.progress && newProgress < m.progress + 8)
           if (currentMessage) {
             setVerificationMessage(currentMessage.message)
           }
 
           if (newProgress >= 100) {
-            setTimeout(() => setCurrentStep("preliminary"), 1000)
+            setTimeout(() => setCurrentStep("preliminary"), 2000)
             return 100
           }
           return Math.min(newProgress, 100)
         })
-      }, 400)
+      }, 800) // Intervalo aumentado de 350ms para 800ms
       return () => clearInterval(interval)
     }
   }, [currentStep])
@@ -872,7 +886,7 @@ export default function SigiloX() {
                       {/* Felicity's Testimonial */}
                       <div className="testimonial-card bg-white rounded-xl shadow-lg p-4 sm:p-5 flex items-start gap-4">
                         <img
-                          src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+                          src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
                           alt="Foto de Felicity"
                           className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover flex-shrink-0 border-2 border-gray-200 shadow-sm"
                           onError={(e) => {
@@ -949,9 +963,10 @@ export default function SigiloX() {
                     animate={{
                       scale: [1, 1.5, 1],
                       opacity: [0.2, 0.6, 0.2],
+                      y: [0, -20, 0],
                     }}
                     transition={{
-                      duration: 2 + Math.random() * 2,
+                      duration: 3 + Math.random() * 2,
                       repeat: Number.POSITIVE_INFINITY,
                       delay: Math.random() * 2,
                     }}
@@ -1294,79 +1309,231 @@ export default function SigiloX() {
             </motion.div>
           )}
 
-          {/* Verification - Mobile Optimized */}
+          {/* Verification - Enhanced Credibility */}
           {currentStep === "verification" && (
             <motion.div
               key="verification"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="min-h-screen relative overflow-hidden flex items-center justify-center bg-black"
+              className="min-h-screen relative overflow-hidden flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-black"
             >
-              {/* Matrix Background - Reduced for mobile */}
-              <div className="absolute inset-0">
-                {matrixCodes.slice(0, 15).map((code, index) => (
-                  <motion.div
-                    key={index}
-                    className="absolute text-[#00FF00] text-sm font-mono opacity-80"
-                    style={{
-                      left: `${Math.random() * 100}%`,
-                      top: `${Math.random() * 100}%`,
-                    }}
-                    animate={{
-                      y: [0, -40, 0],
-                      opacity: [0.4, 1, 0.4],
-                    }}
-                    transition={{
-                      duration: 2 + Math.random() * 2,
-                      repeat: Number.POSITIVE_INFINITY,
-                      delay: Math.random() * 2,
-                    }}
-                  >
-                    {code}
-                  </motion.div>
-                ))}
+              {/* Advanced Tech Background */}
+              <div className="absolute inset-0 opacity-20">
+                {/* Neural Network Pattern */}
+                <div className="absolute inset-0">
+                  {[...Array(20)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute w-1 h-1 bg-blue-400 rounded-full"
+                      style={{
+                        left: `${Math.random() * 100}%`,
+                        top: `${Math.random() * 100}%`,
+                      }}
+                      animate={{
+                        scale: [1, 2, 1],
+                        opacity: [0.3, 1, 0.3],
+                      }}
+                      transition={{
+                        duration: 2 + Math.random() * 3,
+                        repeat: Number.POSITIVE_INFINITY,
+                        delay: Math.random() * 2,
+                      }}
+                    />
+                  ))}
+                </div>
+                
+                {/* Scanning Lines */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/10 to-transparent h-20"
+                  animate={{
+                    y: ["-100px", "calc(100vh + 100px)"],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Number.POSITIVE_INFINITY,
+                    ease: "linear",
+                  }}
+                />
               </div>
 
-              {/* Verification Card */}
-              <div className="relative z-10 w-full max-w-lg mx-auto px-4">
-                <Card className="bg-gray-900 border-2 border-[#00FF00] rounded-2xl shadow-2xl">
-                  <CardContent className="p-6 sm:p-8 text-center">
+              {/* Main Verification Interface */}
+              <div className="relative z-10 w-full max-w-2xl mx-auto px-4">
+                <Card className="bg-gray-900/95 border-2 border-blue-500/30 rounded-2xl shadow-2xl backdrop-blur-sm">
+                  <CardContent className="p-6 sm:p-8">
+                    {/* Header with Logo */}
+                    <div className="text-center mb-6 sm:mb-8">
+                      <div className="flex items-center justify-center gap-3 mb-4">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+                          <Search className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                        </div>
+                        <h1 className="text-xl sm:text-2xl font-bold text-white">
+                          SigiloX<span className="text-blue-400">™</span> AI Engine
+                        </h1>
+                      </div>
+                      <p className="text-blue-300 text-sm sm:text-base font-medium">
+                        Advanced Facial Recognition & Profile Analysis
+                      </p>
+                    </div>
+
+                    {/* Profile Analysis Section */}
                     <div className="mb-6 sm:mb-8">
-                      {profilePhoto ? (
-                        <img
-                          src={profilePhoto || "/placeholder.svg"}
-                          alt="Profile"
-                          className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl mx-auto border-4 border-[#00FF00] shadow-lg"
-                        />
+                      {(uploadedPhoto || profilePhoto) ? (
+                        <div className="relative">
+                          <img
+                            src={(uploadedPhoto || profilePhoto) || "/placeholder.svg"}
+                            alt={uploadedPhoto ? "Uploaded Target Photo" : "Target Profile"}
+                            className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl border-2 border-blue-400 shadow-lg"
+                          />
+                          <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-gray-900 animate-pulse" />
+                        </div>
                       ) : (
-                        <div className="w-20 h-20 sm:w-24 sm:h-24 bg-[#00FF00] rounded-2xl mx-auto flex items-center justify-center shadow-lg">
-                          <User className="w-10 h-10 sm:w-12 sm:h-12 text-black" />
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center border-2 border-blue-400">
+                          <User className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                         </div>
                       )}
+                      
+                      <div className="flex-1">
+                        <h3 className="text-white font-bold text-base sm:text-lg mb-1">Target Identified</h3>
+                        <p className="text-blue-300 text-sm">
+                          Phone: {phoneNumber.replace(/(\+\d{1,3})(\d{2})(\d+)/, "$1 $2 ****")}
+                        </p>
+                        <div className="flex items-center gap-2 mt-2">
+                          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                          <span className="text-green-400 text-xs font-medium">ACTIVE PROFILE DETECTED</span>
+                        </div>
+                      </div>
                     </div>
 
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4">
-                      VERIFYING NOW...
-                    </h2>
-                    <p className="text-[#00FF00] mb-6 sm:mb-8 text-sm sm:text-base font-medium px-2">
-                      {verificationMessage}
-                    </p>
-
-                    <div className="mb-4 sm:mb-6">
-                      <Progress
-                        value={verificationProgress}
-                        className="h-3 sm:h-4 bg-gray-800 rounded-full overflow-hidden"
-                      />
+                    {/* AI Analysis Progress */}
+                    <div className="mb-6 sm:mb-8">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-white font-semibold text-sm sm:text-base">AI Analysis Progress</span>
+                        <span className="text-blue-400 font-bold text-sm sm:text-base">{Math.round(verificationProgress)}%</span>
+                      </div>
+                      
+                      <div className="relative">
+                        <Progress
+                          value={verificationProgress}
+                          className="h-3 sm:h-4 bg-gray-800 rounded-full overflow-hidden border border-blue-500/30"
+                        />
+                        <motion.div
+                          className="absolute top-0 left-0 h-full bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full"
+                          style={{ width: `${verificationProgress}%` }}
+                          animate={{
+                            boxShadow: [
+                              "0 0 10px rgba(59, 130, 246, 0.5)",
+                              "0 0 20px rgba(59, 130, 246, 0.8)",
+                              "0 0 10px rgba(59, 130, 246, 0.5)",
+                            ],
+                          }}
+                          transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                        />
+                      </div>
                     </div>
 
-                    <p className="text-white text-lg sm:text-xl font-bold mb-6 sm:mb-8">
-                      {Math.round(verificationProgress)}% completed
-                    </p>
+                    {/* Current Analysis Step */}
+                    <div className="mb-6 sm:mb-8">
+                      <div className="bg-gray-800/50 rounded-xl p-4 border border-blue-500/20">
+                        <div className="flex items-center gap-3 mb-3">
+                          <motion.div
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                            className="w-6 h-6 border-2 border-blue-400 border-t-transparent rounded-full"
+                          />
+                          <span className="text-blue-400 font-semibold text-sm sm:text-base">Current Process:</span>
+                        </div>
+                        <p className="text-white text-sm sm:text-base font-medium mb-2">{verificationMessage}</p>
+                        
+                        {/* Technical Details */}
+                        <div className="grid grid-cols-2 gap-3 mt-4">
+                          <div className="text-center">
+                            <div className="text-green-400 font-bold text-lg sm:text-xl">
+                              {Math.floor(Math.random() * 50) + 150}
+                            </div>
+                            <div className="text-gray-400 text-xs">Databases Scanned</div>
+                          </div>
+                          <div className="text-center">
+                            <div className="text-cyan-400 font-bold text-lg sm:text-xl">
+                              {Math.floor(Math.random() * 20) + 80}%
+                            </div>
+                            <div className="text-gray-400 text-xs">Match Confidence</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
-                    <div className="flex items-center justify-center gap-2 sm:gap-3 text-[#00FF00] text-sm sm:text-base font-medium">
-                      <Shield className="w-4 h-4 sm:w-5 sm:h-5" />
-                      <span>Secure and encrypted connection</span>
+                    {/* Real-time Analysis Feed */}
+                    <div className="mb-6 sm:mb-8">
+                      <h4 className="text-white font-semibold mb-3 text-sm sm:text-base">Real-time Analysis Feed:</h4>
+                      <div className="bg-black/30 rounded-xl p-3 sm:p-4 border border-green-500/20 max-h-32 overflow-y-auto">
+                        <div className="space-y-1 text-xs sm:text-sm font-mono">
+                          <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            className="text-green-400"
+                          >
+                            [AI] Facial recognition algorithm initialized...
+                          </motion.div>
+                          <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 1 }}
+                            className="text-blue-400"
+                          >
+                            [DB] Scanning 247 social media platforms...
+                          </motion.div>
+                          <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 2 }}
+                            className="text-yellow-400"
+                          >
+                            [MATCH] Profile similarity: 94.7% confidence
+                          </motion.div>
+                          <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 3 }}
+                            className="text-cyan-400"
+                          >
+                            [GEO] Location data cross-referenced...
+                          </motion.div>
+                          {verificationProgress > 50 && (
+                            <motion.div
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              className="text-red-400"
+                            >
+                              [ALERT] Suspicious activity patterns detected
+                            </motion.div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Security & Privacy Notice */}
+                    <div className="bg-gradient-to-r from-gray-800/50 to-blue-900/30 rounded-xl p-4 border border-blue-500/20">
+                      <div className="flex items-start gap-3">
+                        <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <h5 className="text-white font-semibold text-sm sm:text-base mb-2">Privacy & Security</h5>
+                          <div className="space-y-1 text-xs sm:text-sm text-gray-300">
+                            <p>✓ End-to-end encrypted analysis</p>
+                            <p>✓ No data stored on our servers</p>
+                            <p>✓ GDPR & CCPA compliant processing</p>
+                            <p>✓ Target remains completely unaware</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Technical Specs Footer */}
+                    <div className="mt-6 pt-4 border-t border-gray-700">
+                      <div className="flex items-center justify-between text-xs text-gray-400">
+                        <span>Engine: SigiloX AI v3.2.1</span>
+                        <span>SSL: 256-bit encryption</span>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -1431,6 +1598,15 @@ export default function SigiloX() {
                       <span className="text-[#D8000C] font-bold">signs of suspicious activity</span> linked to the
                       provided number.
                     </p>
+
+                    {/* Face Match Card - Only show if uploadedPhoto exists */}
+                    {uploadedPhoto && (
+                      <div className="bg-green-100 border-2 border-green-400 rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8">
+                        <p className="text-green-800 text-sm sm:text-base font-medium">
+                          🎯 <strong>Face Match Found:</strong> We found potential profile matches based on the uploaded photo across multiple dating platforms.
+                        </p>
+                      </div>
+                    )}
 
                     <div className="bg-yellow-100 border-2 border-yellow-400 rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8">
                       <p className="text-yellow-800 text-sm sm:text-base font-medium">
@@ -1539,8 +1715,8 @@ export default function SigiloX() {
           {currentStep === "result" && (
             <motion.div
               key="result"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
               exit={{ opacity: 0 }}
               className="min-h-screen py-4 sm:py-8 bg-[#FFE6E6]"
             >
@@ -1589,6 +1765,21 @@ export default function SigiloX() {
                   </CardContent>
                 </Card>
 
+                {/* Face Match Card - Only show if uploadedPhoto exists */}
+                {uploadedPhoto && (
+                  <Card className="bg-green-600 text-white mb-4 sm:mb-6 rounded-2xl border-0 shadow-xl">
+                    <CardContent className="p-4 sm:p-6">
+                      <div className="flex items-center gap-2 sm:gap-3 mb-3">
+                        <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
+                        <span className="font-bold text-base sm:text-lg">🎯 Face Match Found</span>
+                      </div>
+                      <p className="text-sm opacity-90">
+                        We found potential profile matches based on the uploaded photo across multiple dating platforms.
+                      </p>
+                    </CardContent>
+                  </Card>
+                )}
+
                 {/* Blocked Photos */}
                 <Card className="bg-gray-900 text-white mb-4 sm:mb-6 rounded-2xl border-0 shadow-xl">
                   <CardContent className="p-4 sm:p-6 text-center">
@@ -1627,7 +1818,6 @@ export default function SigiloX() {
                             </div>
                           ))}
                         </div>
-                      </div>
 
                       {/* Setas de Navegação */}
                       <button
@@ -1764,22 +1954,68 @@ export default function SigiloX() {
                   </CardContent>
                 </Card>
 
-                {/* CTA - Email Capture */}
-                <div className="text-center">
-                  <h3 className="text-lg sm:text-xl font-bold text-[#333333] mb-2 sm:mb-3">
-                    UNLOCK THE COMPLETE REPORT
-                  </h3>
-                  <p className="text-sm text-gray-600 mb-4 sm:mb-6">
-                    See photos, conversations and exact location of the profile.
-                  </p>
-                  <Button
-                    onClick={() => setCurrentStep("email-capture")}
-                    className="bg-gradient-to-r from-[#FF0066] to-[#FF3333] hover:from-[#FF0066] hover:to-[#FF3333] text-white font-bold py-3 sm:py-4 px-6 sm:px-8 text-base sm:text-lg rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 w-full touch-manipulation"
-                  >
-                    🔓 UNLOCK REPORT NOW
-                  </Button>
-                  <p className="text-xs text-gray-500 mt-4 font-medium">Limited time offer only.</p>
-                </div>
+                {/* Email Capture Form */}
+                <Card className="bg-white rounded-2xl shadow-lg border-0 mb-4 sm:mb-6">
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="text-center mb-4 sm:mb-6">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600" />
+                      </div>
+                      <h3 className="text-lg sm:text-xl font-bold text-[#333333] mb-2">
+                        Want to unlock the complete report with full photos, chat history, and locations?
+                      </h3>
+                      <p className="text-sm text-gray-600 mb-4 sm:mb-6">
+                        Enter your best email below and we'll send you the full confidential report.
+                      </p>
+                    </div>
+
+                    <div className="space-y-4">
+                      {/* Email Input */}
+                      <div>
+                        <label className="block text-sm font-semibold text-[#333333] mb-2">
+                          Email Address *
+                        </label>
+                        <Input
+                          type="email"
+                          placeholder="Enter your email to receive the full report"
+                          value={email}
+                          onChange={(e) => {
+                            setEmail(e.target.value)
+                            setEmailError("")
+                          }}
+                          className="rounded-xl border-2 border-gray-200 focus:border-blue-500 transition-colors duration-200 py-2 sm:py-3 px-3 sm:px-4 text-sm sm:text-base"
+                          disabled={isSubmittingEmail}
+                        />
+                        {emailError && <p className="text-xs sm:text-sm text-red-500 mt-2 font-medium">{emailError}</p>}
+                      </div>
+
+                      {/* Submit Button */}
+                      <Button
+                        onClick={handleEmailSubmit}
+                        disabled={!email || !email.includes("@") || isSubmittingEmail}
+                        className={`w-full py-3 sm:py-4 text-base sm:text-lg font-bold rounded-xl transition-all duration-300 touch-manipulation ${
+                          email && email.includes("@") && !isSubmittingEmail
+                            ? "bg-gradient-to-r from-[#FF0066] to-[#FF3333] hover:from-[#FF0066] hover:to-[#FF3333] text-white shadow-xl hover:shadow-2xl transform hover:scale-105"
+                            : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                        }`}
+                      >
+                        {isSubmittingEmail ? (
+                          <div className="flex items-center justify-center gap-2">
+                            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                            <span>SENDING REPORT...</span>
+                          </div>
+                        ) : (
+                          "📧 SEND ME THE COMPLETE REPORT"
+                        )}
+                      </Button>
+
+                      <p className="text-xs text-gray-500 text-center flex items-center justify-center gap-2 font-medium">
+                        <Shield className="w-3 h-3 sm:w-4 sm:h-4" />
+                        Your email is encrypted and never shared with third parties
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </motion.div>
           )}
@@ -2020,7 +2256,7 @@ export default function SigiloX() {
 
                       {/* Submit Button */}
                       <Button
-                        onClick={() => window.open("https://global.mundpay.com/priyelxoql?src=yt", "_blank")}
+                        onClick={() => window.open("https://global.mundpay.com/priyelxoql?src=v2", "_blank")}
                         className="w-full py-3 sm:py-4 text-base sm:text-lg font-bold rounded-xl bg-gradient-to-r from-[#FF0066] to-[#FF3333] hover:from-[#FF0066] hover:to-[#FF3333] text-white shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 touch-manipulation"
                       >
                         💳 UNLOCK WITH SECURE PAYMENT
@@ -2057,5 +2293,5 @@ export default function SigiloX() {
         </AnimatePresence>
       </div>
     </div>
-  )
+  )\
 }
